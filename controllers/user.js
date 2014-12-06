@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
+var Language = require('../models/Language');
 var secrets = require('../config/secrets');
 
 /**
@@ -94,6 +95,46 @@ exports.postSignup = function(req, res, next) {
   var user = new User({
     email: req.body.email,
     password: req.body.password
+  });
+
+  var language = new Language({
+      name: 'nombreqqqq',
+      description: 'esta es mi descqqq',
+      exercise: [{
+          name: "nombre exercise",
+          description: "desc exercise",
+          solution: "mi solucion",
+          opciones: [{
+              answer: "mi respuesta",
+              idelement: "mi elemento"
+          },{
+              answer: "mi respuesta 2",
+              idelement: "mi elemento 2"
+          }]
+      },{
+          name: "nombre exercise 2",
+          description: "desc exercise 2",
+          solution: "mi solucion 2",
+          opciones: [{
+              answer: "mi respuesta 3",
+              idelement: "mi elemento 3"
+          },{
+              answer: "mi respuesta 4",
+              idelement: "mi elemento 4"
+          }]
+      }]
+  });
+
+  var progress = new Progress({
+      name: "nombre de progress"
+
+  });
+
+
+  Language.findOne({ name: 'test'}, function(err, existingLang) {
+      language.save(function(err) {
+
+      });
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
