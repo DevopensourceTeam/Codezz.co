@@ -77,15 +77,18 @@ exports.playLevel = function(req, res) {
 	});
 };
 
-exports.validateLevel = function(userid, course, level, respuestas) {
-	
-	Language.findOne({'url': course}, function(error, data){
-		language = data;
-		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': level}, function(error, data){
-			exercise = data;
+exports.validateLevel = function(req, res, next) {
 
-				if(md5(exercise['solution'])==md5(respuestas)){
-					User.findById(userid, function(err, user) {
+	console.log(req.body);
+	
+	Language.findOne({'url': req.body.course}, function(error, language){
+
+		console.log(language);
+
+		Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.body.level}, function(error, exercise){
+				
+				if(md5(exercise['solution'])==md5(req.body.data)){
+					User.findById(req.user.id, function(err, user) {
 
 					    if (err) return next(err);
 
@@ -96,6 +99,10 @@ exports.validateLevel = function(userid, course, level, respuestas) {
 					    user.save(function(err) {
 					      if (err) return next(err);
       					  console.log("Correct!!");
+
+      					  var correct = "/course/"+language.url+'/level/'+(exercise.level+=1);
+      					  res.end(correct);
+
 					    });
 					});
 				}else{
@@ -103,6 +110,7 @@ exports.validateLevel = function(userid, course, level, respuestas) {
 				}
 		});
 	});
+
 };
 
 exports.testDebug = function(course, level, data) {

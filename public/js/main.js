@@ -22,7 +22,6 @@ $(document).ready(function() {
 	// Validate user exercise
 	function validateExerciseResult () {
 		var data = "";
-		var uid = uidData.val().trim();
 		var course = courseData.val().trim();
 		var level = levelData.val().trim();
 		var idsInOrder = $("#sortable-main").sortable("toArray");
@@ -31,8 +30,16 @@ $(document).ready(function() {
 			data+=id;
 		});
 
-		if(uid && course && level && data){
-			socket.emit('validate exercise', uid, course, level, data);
+		if(course && level && data){
+			
+			//socket.emit('validate exercise', uid, course, level, data);
+
+        	$.post("/course/levelvalidate",{course: course, level: level, data: data}, function(result) {
+            	if(result)
+				{
+					alert("Congratulation go to the next level! :)");
+				}
+          	});
 		}
 	}
 
@@ -50,6 +57,11 @@ $(document).ready(function() {
 		console.log("Debug run click button");
 		validateExerciseResult();
   	});
+
+  	function nextLevel()
+  	{
+
+  	}
 
 
 	// Debug
