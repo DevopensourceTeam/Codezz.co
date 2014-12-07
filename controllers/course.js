@@ -25,14 +25,14 @@ exports.index = function(req, res) {
 
 exports.viewCourse = function(req, res) {
 	res.render('course/view', {
-		title: "Course "+req.params.course,
+		title: "Course",
 		course: req.params.course
 	});
 };
 
 exports.playLevel = function(req, res) {
 	res.render('course/level', {
-		title: "Course level",
+		title: "Course",
 		course: req.params.course,
 		level: req.params.level
 	});

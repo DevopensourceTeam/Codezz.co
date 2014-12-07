@@ -1,2 +1,7 @@
-h1 #{title}
-p #{course}
+extends ../layout
+
+block content
+	h1 #{title} #{course} level #{level} 
+	p Descripcion de este nivel
+	a(href='/course/'+course)
+		span Back to levels

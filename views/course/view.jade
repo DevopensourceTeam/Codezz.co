@@ -1,3 +1,18 @@
-h1 #{title}
-a(href=link)
-	span Link
+extends ../layout
+
+block content
+	h1 #{title} #{course}
+	p Explicacion sobre este nivel
+	a(href='/course')
+		span Back to Courses
+	hr
+	.container
+		.row
+			.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				.box
+					.box-icon
+						span.fa.fa-4x.fa-html5
+					.info
+						h4 Name
+						p Desc
+						a.btn.btn-default(href="/course/"+course+"/level/1", role='button') Go level
