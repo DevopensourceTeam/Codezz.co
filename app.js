@@ -139,6 +139,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 app.get('/course', courseController.index);
 app.get('/course/:course', passportConf.isAuthenticated, courseController.viewCourse);
 app.get('/course/:course/level/:level', passportConf.isAuthenticated, courseController.playLevel);
+app.get('/course/:course/level/:level/validate/:token', passportConf.isAuthenticated, courseController.validateLevel);
 
 /**
  * API examples routes.
