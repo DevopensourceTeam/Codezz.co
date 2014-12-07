@@ -21,9 +21,9 @@ exports.viewCourse = function(req, res) {
 		language = data;
 		Exercise.find({ '_id': { $in : data['exercise']}}, function(error, data){
 			exercise = data;
-			res.render('course', {
+			res.render('course/view', {
 				title: req.params.course,
-				course: language,
+				courses: language,
 				exercises: exercise
 			});
 		});
