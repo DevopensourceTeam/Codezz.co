@@ -3,7 +3,7 @@
   "version": "1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/DevopensourceTeam/codezz.git"
   },
   "scripts": {
     "start": "node app.js",

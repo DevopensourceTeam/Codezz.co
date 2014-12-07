@@ -22,15 +22,10 @@ module.exports = {
   //db: process.env.MONGOLAB_URI || process.env.MONGODB || 'mongodb://localhost:27017/test',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
-
-  mailgun: {
-    user: process.env.MAILGUN_USER || 'postmaster@sandboxf8cce430f0fc47838b5a44704cdbf15e.mailgun.org',
-    password: process.env.MAILGUN_PASSWORD || '123456'
-  },
  
   sendgrid: {
-    user: process.env.SENDGRID_USER || 'hslogin',
-    password: process.env.SENDGRID_PASSWORD || 'hspassword00'
+    user: process.env.SENDGRID_USER || 'devopensource',
+    password: process.env.SENDGRID_PASSWORD || '123456'
   },
 
   github: {

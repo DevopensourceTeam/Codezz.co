@@ -195,7 +195,6 @@ module.exports = app;
 io.sockets.on('connection', function(socket) {
 
   socket.on('validate exercise', function(userid, course, level, respuestas){
-    //console.log('Desde socket on validate exercise');
     //courseController.testDebug(userid, course, level, respuestas);
   });
 

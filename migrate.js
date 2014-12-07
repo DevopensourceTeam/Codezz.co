@@ -39,8 +39,8 @@ var Language = require('./models/Language');
     var exercise1 = new Exercise({
     name: "IF",
     level: 1,
-    description: "Basic structure if - ",
-    solution: "l1l5l4l3",
+    description: "In this first exercise, you will learn the basic structure of conditional IF. Its operation is simple: a condition is evaluated, if it meets the condition executes the code inside. Exercise: Drag & Drop the options to build the correct answer.",
+    solution: "l1l5l4",
     opciones: [{
       answer: "if (CONDITION) {",
       idelement: "l1" 
@@ -63,7 +63,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "IF - ELSE",
     level: 2,
-    description: "Descripcion2",
+    description: "Now, we have the ELSE conditional. It works together with the IF conditional: The condition is evaluated, if true executes a code, if false, execute other code. Try it with this exercise.",
     solution: "l8l1l3l7l5",
     opciones: [{
       answer: "if (Has less legs than 4) {",
@@ -96,7 +96,7 @@ var Language = require('./models/Language');
   var exercise3 = new Exercise({
     name: "WHILE",
     level: 3,
-    description: "Descripcion3",
+    description: "There are many loops that are used for programming, very useful to solve big problems. This course will teach you two of them. The first one is the While loop: allows repeat the internal code while condition is met. Ordered correctly this loop.",
     solution: "l5l2l1",
     opciones: [{
       answer: "while (Number less than 10)",
@@ -120,7 +120,7 @@ var Language = require('./models/Language');
   var exercise4 = new Exercise({
     name: "SWITCH - CASE",
     level: 4,
-    description: "Descripcion4",
+    description: "The Switch - Case structure allows us to assess the value of an expression to make a decision in the flow of execution. It is very similar to the control structure If - Else but Switch - Case we can evaluate more than two cases. Organize the options below to create your own loop Switch - Case.",
     solution: "l5l2l4l9l1l8l7l3l6",
     opciones: [{
       answer: "switch (OPERATOR) {",
@@ -167,7 +167,7 @@ var Language = require('./models/Language');
   var exercise1 = new Exercise({
     name: "Basic Structure",
     level: 1,
-    description: "Description ",
+    description: "HTML is a programming language generally used in web pages. You will learn the structure and the basic tags needed to start creating your HTML file. Organize the options correctly to build the structure of an HTML file.",
     solution: "l2l1l8l5l4l7l6l3",
     opciones: [{
       answer: "<html>",
@@ -200,7 +200,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "Content",
     level: 2,
-    description: "Descripcion2",
+    description: "There are specific labels for each piece of HTML code. Can you build it correctly?.",
     solution: "l10l4l8l2l7l6l9l1",
     opciones: [{
       answer: "<html>",
@@ -239,7 +239,7 @@ var Language = require('./models/Language');
   var exercise3 = new Exercise({
     name: "HTML5 Tags",
     level: 3,
-    description: "Descripcion3",
+    description: "With the advent of HTML5, there are new labels with new features. Here we show through an exercise some of them, solve it!.", 
     solution: "l13l2l6l4l1l9l8l5l3l15l7l14l10",
     opciones: [{
       answer: "<html>",
@@ -293,7 +293,7 @@ var Language = require('./models/Language');
   var exercise4 = new Exercise({
     name: "Additional elements",
     level: 4,
-    description: "Descripcion4",
+    description: "As a final exercise we teach you how to create additional elements. The tables allow us to represent and order elements in rows and columns so that we can summarize large amounts of information. Resolve the exercise.",
     solution: "l5l1l4l7l6l3",
     opciones: [{
       answer: "<table>",
@@ -341,7 +341,7 @@ var Language = require('./models/Language');
   var exercise1 = new Exercise({
     name: "Basic Structure",
     level: 1,
-    description: "Description ",
+    description: "CSS is a mechanism that lets you format and design the documents written in HTML. In this course you will learn to apply your own styles to HTML files. Organizes the basic structure.",
     solution: "l1l5l2",
     opciones: [{
       answer: "tag {",
@@ -365,7 +365,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "Content",
     level: 2,
-    description: "Descripcion2",
+    description: "Let's explain the content of the CSS structure. CSS allows you to modify the HTML content as you want: You can change the text color, add margins, centering text, and many more. Drag & Drop the correct expression in this order: 1 - Change the text color. 2 - Align the text in the center. 3 - Add a padding of 20 pixels.",
     solution: "l5l1l2",
    opciones: [{
       answer: "color: #000",
@@ -392,7 +392,7 @@ var Language = require('./models/Language');
   var exercise3 = new Exercise({
     name: "Strucutre + Content",
     level: 3,
-    description: "Now let's merge level 1 and level 2 into a same exercise",
+    description: "Great! You know the structure and content. Let's merge level 1 and level 2 into a same exercise. Drag & Drop the expressions in this order: 1 - Change the text color. 2 - Align the text in the center. 3 - Add a padding of 20 pixels.",
     solution: "l1l4l2l5l3",
     opciones: [{
       answer: "h1 {",
@@ -416,7 +416,7 @@ var Language = require('./models/Language');
   var exercise4 = new Exercise({
     name: "Custom CSS",
     level: 4,
-    description: "Ok. Now you know how to add a style to HTML tags, but what happens if you want to give a different style item to the rest?",
+    description: "Ok. Now you know how to add a style to HTML tags, but what happens if you want to give a different style item to the rest? Let's give this tag <h1> a different style to the rest of <h1>. Look at this line of code: <h1 class=\"custom\"> Hello World </h1> Creat you own custom CSS following this order: 1 - Change the text color. 2 - Change the font size. 3 - Align the text in the center",
     solution: "l3l2l1l7l5",
     opciones: [{
       answer: ".custom {",
@@ -425,10 +425,10 @@ var Language = require('./models/Language');
       answer: "color: #FFF",
       idelement: "l2" 
     },{
-      answer: "font-weith: 20px",
+      answer: "font-size: 20px",
       idelement: "l1" 
     },{
-      answer: "text-align",
+      answer: "text-align: center",
       idelement: "l7" 
     },{
       answer: "}",
@@ -444,7 +444,7 @@ var Language = require('./models/Language');
   exercise4.save();
 
   var language = new Language({
-      name: 'CSS3',
+      name: 'CSS',
       description: 'Do you want to give a better design of your website? Learn it with this CSS course.',
       url: 'css',
       exercise: [exercise1,exercise2,exercise3,exercise4] 
@@ -455,7 +455,7 @@ var Language = require('./models/Language');
   var exercise1 = new Exercise({
     name: "Basic Structure",
     level: 1,
-    description: "Description ",
+    description: "XML lets you design your own markup language helping to keep our information hierarchically structured. Solves the basic structure of an XML file.",
     solution: "l8l2l5l4l3l7l1",
     opciones: [{
       answer: "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
@@ -488,7 +488,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "Content",
     level: 2,
-    description: "XML es \"case sensitive\", trata a las mayúsculas y las minúsculas como caracteres diferentes. Si un elemento de XML está definido como \"Elemento\", no podemos usar \"elemento\" para referirnos a él.",
+    description: "XML is \"case sensitive\", treats uppercase and lowercase as different characters. If an XML element is defined as \"Element\", we can not use \"element\" to refer to it. Knowing this, organizes the code.",
     solution: "l5l3l4l1l2l8l9",
     opciones: [{
       answer: "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
@@ -534,7 +534,7 @@ var Language = require('./models/Language');
   var exercise1 = new Exercise({
     name: "Basic Structure",
     level: 1,
-    description: "Description ",
+    description: "The PHP program is executed on the server and the result sent to the browser, allows access to the resources that server has. Can you create the basic structure?.",
     solution: "l3l1l4",
     opciones: [{
       answer: "<?php",
@@ -558,7 +558,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "PHP inside HTML",
     level: 2,
-    description: "PHP can also be introduced into an HTML file. In this exercise you can learn how is the structure organization",
+    description: "PHP can also be introduced into an HTML file. In this exercise you can learn how is the structure organization.",
     solution: "l3l4l5l7l1l8l2",
     opciones: [{
       answer: "<html>",
@@ -615,7 +615,7 @@ var Language = require('./models/Language');
   var exercise2 = new Exercise({
     name: "JSON Object",
     level: 2,
-    description: "Now you know how to create a pair key-value data. Select the correct answer to create a JSON Object",
+    description: "Now you know how to create a pair key-value data. Select the correct answer to create a JSON Object.",
     solution: "l3",
     opciones: [{
       answer: " { \"Name\" : \"Apple\" , \"Amount\" : \"10\" } ",
@@ -636,7 +636,7 @@ var Language = require('./models/Language');
   var exercise3 = new Exercise({
     name: "JSON Arrays",
     level: 3,
-    description: "Cool!. In Json you can include arrays of JSON objects. Practice it creating one",
+    description: "Cool!. In Json you can include arrays of JSON objects. Practice it creating one.",
     solution: "l4l3l6l1",
     opciones: [{
       answer: " \"Fruit\" : [ ",
@@ -663,7 +663,7 @@ var Language = require('./models/Language');
   var exercise4 = new Exercise({
     name: "Arrays of Arrays",
     level: 4,
-    description: "Last exercice. Are you able to create an array containing arrays?",
+    description: "Last exercice. Are you able to create an array containing arrays?.",
     solution: "l5l4l8l7l12l9l1l3l2l10l6l11",
     opciones: [{
       answer: " \"Food\" : [ ",
