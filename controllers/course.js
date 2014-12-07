@@ -23,7 +23,7 @@ exports.viewCourse = function(req, res) {
 			exercise = data;
 			res.render('course', {
 				title: req.params.course,
-				course: language,git a
+				course: language,
 				exercises: exercise
 			});
 		});
@@ -31,9 +31,15 @@ exports.viewCourse = function(req, res) {
 };
 
 exports.playLevel = function(req, res) {
-	res.render('course/level', {
-		title: "Course",
-		course: req.params.course,
-		level: req.params.level
+	Language.findOne({'url': req.params.course}, function(error, data){
+		language = data;
+		Exercise.find({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, data){
+			exercise = data;
+			res.render('course/level', {
+				title: "Course",
+				course: language,
+				level: 	data
+			});
+		});
 	});
 };

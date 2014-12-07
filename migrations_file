@@ -1,5 +1,6 @@
   var exercise1 = new Exercise({
     name: "Ejercicio1",
+    level: 1,
     description: "Descripcion1",
     solution: "l1",
     opciones: [{
@@ -14,6 +15,7 @@
 
   var exercise2 = new Exercise({
     name: "Ejercicio2",
+    level: 2,
     description: "Descripcion2",
     solution: "l2",
     opciones: [{
@@ -26,12 +28,42 @@
   });
   exercise2.save();
 
+  var exercise3 = new Exercise({
+    name: "Ejercicio3",
+    level: 3,
+    description: "Descripcion3",
+    solution: "l2",
+    opciones: [{
+      answer: "answer2",
+      idelement: "l2" 
+    },{
+      answer: "answer3",
+      idelement: "l3" 
+    }]
+  });
+  exercise3.save();
+
+  var exercise4 = new Exercise({
+    name: "Ejercicio4",
+    level: 4,
+    description: "Descripcion4",
+    solution: "l2",
+    opciones: [{
+      answer: "answer2",
+      idelement: "l2" 
+    },{
+      answer: "answer3",
+      idelement: "l3" 
+    }]
+  });
+  exercise4.save();
+
 
   var language = new Language({
       name: 'Basic Code',
       description: 'Are you a beginner programmer and wants to learn the basic knowledge? This is your course.',
       url: 'basic-code',
-      exercise: [exercise1,exercise2] 
+      exercise: [exercise1,exercise2,exercise3,exercise4] 
   });
   language.save();
 
