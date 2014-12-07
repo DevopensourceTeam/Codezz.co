@@ -28,8 +28,8 @@
 
 
   var language = new Language({
-      name: 'nombreqqqq',
+      name: 'HTML',
       description: 'esta es mi descqqq',
-      exercise: [exercise1,exercise2]
+      exercise: [exercise1,exercise2] 
   });
   language.save();

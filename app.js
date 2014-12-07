@@ -31,9 +31,9 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
- * Game Controllers 
+ * Course Controllers 
  */
-var gameController = require('./controllers/game');
+var courseController = require('./controllers/course');
 
 /**
  * API keys and Passport configuration.
@@ -136,7 +136,9 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
  * Game routes.
  */
 
-app.get('/game', gameController.index);
+app.get('/course', courseController.index);
+app.get('/course/:course', passportConf.isAuthenticated, courseController.viewCourse);
+app.get('/course/:course/level/:level', passportConf.isAuthenticated, courseController.playLevel);
 
 /**
  * API examples routes.
