@@ -49,6 +49,7 @@ var passportConf = require('./config/passport');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var socketIoSessions = require("socket-io.sessions");
 
 /**
  * Connect to MongoDB.
@@ -233,7 +234,16 @@ server.listen(app.get('port'), function() {
 
 module.exports = app;
 
+
 io.on('connection', function(socket) {
+
+  socket.on('validate exercise', function(userid, course, level, respuestas){
+    console.log('Desde socket on validate exercise');
+    courseController.validateLevel(userid, course, level, respuestas);
+  });
+
+  // Debug
+ /*
   socket.emit('greet', { hello: 'Hey there browser!' });
   socket.on('respond', function(data) {
     console.log(data);
@@ -241,4 +251,6 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     console.log('Socket disconnected');
   });
+  */
+
 });

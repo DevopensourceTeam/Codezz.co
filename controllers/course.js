@@ -1,3 +1,4 @@
+var md5 = require('MD5');
 var Exercise = require('../models/Exercise');
 var Language = require('../models/Language');
 var User = require('../models/User');
@@ -52,9 +53,11 @@ exports.playLevel = function(req, res) {
 						console.log(user);
 						if (user) {
 							res.render('course/level', {
-							title: "Course",
-							course: language,
-							level: 	exercise
+								title: "Course",
+								course_id: req.params.course,
+								course: language,
+								level_id: req.params.level,
+								level: 	exercise
 							});
 						}else{
 							return res.redirect("/course/"+req.params.course);
@@ -64,20 +67,26 @@ exports.playLevel = function(req, res) {
 			}else{
 				res.render('course/level', {
 					title: "Course",
+					course_id: req.params.course,
 					course: language,
+					level_id: req.params.level,
 					level: 	exercise
 				});
-			} 
+			}
 		});
 	});
 };
 
-exports.validateLevel = function(req, res) {
-	var md5 = require('MD5');
-	Language.findOne({'url': req.params.course}, function(error, language){
-		Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.params.level}, function(error, exercise){
-				if(md5(exercise['solution'])==req.params.token){
-					User.findById(req.user.id, function(err, user) {
+exports.validateLevel = function(userid, course, level, respuestas) {
+	
+	Language.findOne({'url': course}, function(error, data){
+		language = data;
+		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': level}, function(error, data){
+			exercise = data;
+
+				if(md5(exercise['solution'])==md5(respuestas)){
+					User.findById(userid, function(err, user) {
+
 					    if (err) return next(err);
 
 					    if(user.progress.indexOf(exercise)>1){
@@ -95,3 +104,24 @@ exports.validateLevel = function(req, res) {
 		});
 	});
 };
+
+exports.testDebug = function(course, level, data) {
+	console.log("Prueba desde controller course");
+	console.log(level);
+	console.log(level);
+	console.log(data);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+

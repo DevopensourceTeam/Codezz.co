@@ -2,7 +2,7 @@ extends ../layout
 
 block content
 	h1 #{title} #{course.name} level #{level_id} 
-	a(href='/course/'+course)
+	a(href='/course/'+course.url)
 		span Back to levels
 	.row
 		.col-md-12.level-intro
@@ -21,4 +21,7 @@ block content
 		.col-md-8.console-log
 			p devopen:$ Consola con el texto de error
 		.col-md-4.code-run
+			input(type="hidden", id="uid", value=user.id)
+			input(type="hidden", id="courseid", value=course.url)
+			input(type="hidden", id="levelid", value=level_id)
 			input(type="button", id="validate", value="Run code >")
