@@ -28,8 +28,49 @@
 
 
   var language = new Language({
-      name: 'HTML',
-      description: 'esta es mi descqqq',
+      name: 'Basic Code',
+      description: 'Are you a beginner programmer and wants to learn the basic knowledge? This is your course.',
+      url: 'basic-code',
       exercise: [exercise1,exercise2] 
+  });
+  language.save();
+
+    var language = new Language({
+      name: 'HTML5',
+      description: 'Learn the structure of a web page. Create your own website from the beginning.',
+      url: 'html5',
+      exercise: [] 
+  });
+  language.save();
+
+  var language = new Language({
+      name: 'CSS3',
+      description: 'Do you want to give a better design of your website? Learn it with this CSS course.',
+      url: 'css',
+      exercise: [] 
+  });
+  language.save();
+
+  var language = new Language({
+      name: 'XML',
+      description: 'Wants communicate multiple applications together or integrate information? Create your own XML file to transfer data between them.',
+      url: 'xml',
+      exercise: [] 
+  });
+  language.save();
+
+    var language = new Language({
+      name: 'PHP',
+      description: 'Server-side scripting language. Learn how to use it.',
+      url: 'php',
+      exercise: [] 
+  });
+  language.save();
+
+    var language = new Language({
+      name: 'JSON',
+      description: 'Do you want to create JSON objects to transfer data to APIs, backend or frontend? Check this course and create your own JSON object.',
+      url: 'json',
+      exercise: [] 
   });
   language.save();

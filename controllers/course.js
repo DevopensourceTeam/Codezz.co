@@ -8,25 +8,25 @@ var Language = require('../models/Language');
  */
 
 exports.index = function(req, res) {
-	var languages;
-
 	Language.find({}, function(error, data){
-		
-		languages = data;
-
-		//console.log(languages);
-
 		res.render('course', {
 			title: 'Courses', 
-			courses: languages
+			courses: data
 		});
 	});
 };
 
 exports.viewCourse = function(req, res) {
-	res.render('course/view', {
-		title: "Course",
-		course: req.params.course
+	Language.findOne({'url': req.params.course}, function(error, data){
+		language = data;
+		Exercise.find({ '_id': { $in : data['exercise']}}, function(error, data){
+			exercise = data;
+			res.render('course', {
+				title: req.params.course,
+				course: language,
+				exercises: exercise
+			});
+		});
 	});
 };
 
