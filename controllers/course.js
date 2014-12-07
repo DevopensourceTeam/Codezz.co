@@ -32,17 +32,7 @@ exports.viewCourse = function(req, res) {
 exports.playLevel = function(req, res) {
 	Language.findOne({'url': req.params.course}, function(error, data){
 		language = data;
-<<<<<<< HEAD
-		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, data){
-			exercise = data;
-			res.render('course/level', {
-				title: "Course",
-				course_id: req.params.course,
-				course: language,
-				level_id: req.params.level,
-				level: 	data
-=======
-		Exercise.find({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, exercise){
+		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, exercise){
 			User.findById(req.user.id, function(err, user) {
 				Exercise.find({ '_id': { $in : user['progress']}, 'level': req.params.level}, function(error, progress){
 				    console.log(progress);
@@ -56,7 +46,6 @@ exports.playLevel = function(req, res) {
 						console.log("denied");
 					}
 				});
->>>>>>> validate level
 			});
 		});
 	});
