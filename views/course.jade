@@ -1,17 +1,17 @@
 extends layout
 
 block content
-  h1 Select a Course
-  p Welcome to new way to learn code more fun!! :)
+  .titulos
+    h1 Select a Course
+    p Welcome to new way to learn code more fun!! :)
   hr
-  .container
   .row
-  - for course in courses
-    .col-xs-12.col-sm-6.col-md-6.col-lg-6
-      .box
-        .box-icon
-          span.fa.fa-4x.fa-html5
-        .info
-          h4 #{course.name}
-          p #{course.description}
-          a.btn.btn-default(href="/course/"+course.url, role='button') Go level
+    for course in courses
+      .col-xs-12.col-sm-6.col-md-6.col-lg-6.course-view
+        .box
+          .box-icon
+            span(class="fa fa-4x fa-"+course.url)
+          .info
+            h4 #{course.name}
+            p #{course.description}
+            a.btn.btn-default(href="/course/"+course.url, role='button') Go level
