@@ -7,10 +7,10 @@ var User = require('../models/User');
  * Game page.
  */
 exports.index = function(req, res) {
-	Language.find({}, function(error, data){
+	Language.find({}, function(error, language){
 		res.render('course', {
 			title: 'Courses', 
-			courses: data
+			courses: language
 		});
 	});
 };
@@ -22,8 +22,7 @@ exports.viewCourse = function(req, res) {
 			return res.redirect("/course");
 		}
 
-		Exercise.find({ '_id': { $in : data['exercise']}}, function(error, data){
-			exercise = data;
+		Exercise.find({ '_id': { $in : language['exercise']}}, function(error, exercise){
 			res.render('course/view', {
 				title: req.params.course,
 				courses: language,
@@ -75,10 +74,8 @@ exports.playLevel = function(req, res) {
 
 exports.validateLevel = function(req, res) {
 	var md5 = require('MD5');
-	Language.findOne({'url': req.params.course}, function(error, data){
-		language = data;
-		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, data){
-			exercise = data;
+	Language.findOne({'url': req.params.course}, function(error, language){
+		Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.params.level}, function(error, exercise){
 				if(md5(exercise['solution'])==req.params.token){
 					User.findById(req.user.id, function(err, user) {
 					    if (err) return next(err);
@@ -86,7 +83,7 @@ exports.validateLevel = function(req, res) {
 					    if(user.progress.indexOf(exercise)>1){
 					    	user.progress.push(exercise);
 					    }
-					    
+
 					    user.save(function(err) {
 					      if (err) return next(err);
       					  console.log("Correct!!");
