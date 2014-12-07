@@ -11,10 +11,17 @@ html
   body
     include partials/navbar
 
-    .container
-      include partials/flash
-      block content
+    include partials/slider
 
+    .usersay
+      .container
+        include partials/flash
+        block content
+
+    .cources
+      .container
+        block cources
+    
     include partials/footer
 
     != js('application')
