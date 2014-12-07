@@ -24,10 +24,20 @@ exports.viewCourse = function(req, res) {
 		}
 
 		Exercise.find({ '_id': { $in : language['exercise']}}, function(error, exercise){
-			res.render('course/view', {
-				title: req.params.course,
-				courses: language,
-				exercises: exercise
+			User.findById(req.user.id, function(err, user) {
+				Exercise.findOne({ '_id': { $in : user['progress']}}).sort({'level':-1}).limit(1).exec(function(error, progress){
+					var currentlevel=0;
+					if(progress){
+						currentlevel = progress['level'];
+					}
+					
+					res.render('course/view', {
+						title: req.params.course,
+						courses: language,
+						exercises: exercise,
+						level: currentlevel
+					});
+				});
 			});
 		});
 	});
