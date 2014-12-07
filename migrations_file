@@ -1,0 +1,35 @@
+  var exercise1 = new Exercise({
+    name: "Ejercicio1",
+    description: "Descripcion1",
+    solution: "l1",
+    opciones: [{
+      answer: "answer1",
+      idelement: "l1" 
+    },{
+      answer: "answer2",
+      idelement: "l2" 
+    }]
+  });
+  exercise1.save();
+
+  var exercise2 = new Exercise({
+    name: "Ejercicio2",
+    description: "Descripcion2",
+    solution: "l2",
+    opciones: [{
+      answer: "answer2",
+      idelement: "l2" 
+    },{
+      answer: "answer3",
+      idelement: "l3" 
+    }]
+  });
+  exercise2.save();
+
+
+  var language = new Language({
+      name: 'nombreqqqq',
+      description: 'esta es mi descqqq',
+      exercise: [exercise1,exercise2]
+  });
+  language.save();
