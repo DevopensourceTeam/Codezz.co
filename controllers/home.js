@@ -5,6 +5,8 @@
 
 exports.index = function(req, res) {
   res.render('home', {
-    title: 'Home'
+  	site: 'Home',
+    title: 'Codezz',
+    slogan: 'platform for beginners programmers'
   });
 };

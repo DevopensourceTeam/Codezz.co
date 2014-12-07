@@ -10,7 +10,9 @@ var User = require('../models/User');
 exports.index = function(req, res) {
 	Language.find({}, function(error, language){
 		res.render('course', {
-			title: 'Courses', 
+		  	site: 'Cources',
+		    title: 'Cources',
+		    slogan: 'platform for beginners programmers',
 			courses: language
 		});
 	});

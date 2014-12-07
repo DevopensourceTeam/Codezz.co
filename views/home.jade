@@ -1,13 +1,6 @@
 extends layout
 
 block content
-  h1 Codezz
-  p.lead Platform for beginners programmers
-  hr
-  .row
-    .col-sm-12
-      h2 What is Codezz?
-      p Proin a venenatis risus. Nulla hendrerit quam ac lorem accumsan rhoncus. Maecenas lacinia ullamcorper turpis et fringilla. Vivamus vulputate venenatis risus eu suscipit. Fusce lobortis tempus magna, quis facilisis odio facilisis et. Donec ut urna ut sem suscipit varius et eu elit.
   .row.home-person
     .col-sm-4
       .box
@@ -17,16 +10,16 @@ block content
         .info
           h3 Oliver Montes
           p.proff Web Designer
-          p Con esta plataforma he podido programarla!
+          p Thanks to this teaching platform I can give a better design to my web pages.
     .col-sm-4
       .box
         .box-icon
           span.fa.fa-4x
             img(src='http://kableapp.com/images/foto_adrian-130x130.png', class='avatar')
         .info
-          h3 Adrian Olcina
+          h3 Adrián Olcina
           p.proff Web Developer
-          p Con esta plataforma he podido programarla!
+          p Great! The HTML5 teaching has helped me to create my first website.
     .col-sm-4
       .box
         .box-icon
@@ -35,15 +28,83 @@ block content
         .info
           h3 Marc Bernabeu
           p.proff Backend Developer
-          p Con esta plataforma he podido programarla!
+          p Thank you. With that JSON course there is not API that resists me.
 block cources
   .row  
     .col-sm-4
-      h3 Basic programming
-      p Con esta plataforma he podido programarla!
+      .panel.panel-success
+        .panel-heading
+          h4.text-center Basic Code
+        .panel-body.text-center
+          p Are you a beginner programmer and wants to learn the basic knowledge? This is your course.
+        ul.list-group.list-group-flush.text-center
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 1
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 2
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 3
+        .panel-footer
+          a(class="btn btn-lg btn-block btn-success", href="/course/basic-code")
+            | Play level!
     .col-sm-4
-      h3 HTML5
-      p Con esta plataforma he podido programarla!
+      .panel.panel-success
+        .panel-heading
+          h4.text-center HTML5
+        .panel-body.text-center
+          p Learn the structure of a web page. Create your own website from the beginning.
+          
+        ul.list-group.list-group-flush.text-center
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 1
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 2
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 3
+        .panel-footer
+          a(class="btn btn-lg btn-block btn-success", href="/course/html5")
+            | Play level!
     .col-sm-4
-      h3 CSS3
-      p Con esta plataforma he podido programarla!
+      .panel.panel-success
+        .panel-heading
+          h4.text-center JSON
+        .panel-body.text-center
+          p Do you want to create JSON objects to transfer data to APIs, backend or frontend? Check this course and create your own JSON object.
+        ul.list-group.list-group-flush.text-center
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 1
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 2
+          li.list-group-item
+            i.icon-ok.text-danger
+            | Level 3
+        .panel-footer
+          a(class="btn btn-lg btn-block btn-success", href="/course/json")
+            | Play level!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
