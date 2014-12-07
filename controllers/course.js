@@ -23,7 +23,7 @@ exports.viewCourse = function(req, res) {
 			exercise = data;
 			res.render('course', {
 				title: req.params.course,
-				course: language,
+				course: language,git a
 				exercises: exercise
 			});
 		});
