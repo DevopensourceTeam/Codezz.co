@@ -89,7 +89,7 @@ exports.validateLevel = function(userid, course, level, respuestas) {
 
 					    if (err) return next(err);
 
-					    if(user.progress.indexOf(exercise)>1){
+					    if(!(user.progress.indexOf(exercise)>1)){
 					    	user.progress.push(exercise);
 					    }
 
