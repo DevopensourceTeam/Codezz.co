@@ -12,7 +12,7 @@ exports.index = function(req, res) {
 		res.render('course', {
 		  	site: 'Cources',
 		    title: 'Cources',
-		    slogan: 'platform for beginners programmers',
+		    slogan: 'Platform for beginners programmers',
 			courses: language
 		});
 	});
@@ -34,7 +34,9 @@ exports.viewCourse = function(req, res) {
 					}
 					
 					res.render('course/view', {
-						title: req.params.course,
+						site: 'Course',
+		    			slogan: 'Platform for beginners programmers',
+						title: language.name,
 						courses: language,
 						exercises: exercise,
 						level: currentlevel

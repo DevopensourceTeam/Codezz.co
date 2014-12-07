@@ -1,19 +1,20 @@
 extends ../layout
 
 block content
-	h1 #{courses.name}
-	p #{courses.description}
-	a(href='/course')
-		span Back to Courses
+	.titulos
+		h1 #{courses.name}
+		p #{courses.description}
+		a(href='/course')
+			span Back to Courses
 	hr
-	.container
-		.row
-		- for exercise in exercises
-			.col-xs-12.col-sm-6.col-md-6.col-lg-6
-				.box
-					.box-icon
-						span.fa.fa-4x.fa-html5
-					.info
-						h4 #{exercise.name}
-						p #{exercise.description}
-						a.btn.btn-default(href="/course/"+courses.url+"/level/"+exercise.level, role='button') Go level
+	.row
+	- for exercise in exercises
+		.col-xs-12.col-sm-6.col-md-6.col-lg-6.course-view.course-single
+			.box
+				.box-icon
+					span.fa.fa-4x
+						| #{exercise.level}
+				.info
+					h4 #{exercise.name}
+					p #{exercise.description}
+					a.btn.btn-default(href="/course/"+courses.url+"/level/"+exercise.level, role='button') Go level
