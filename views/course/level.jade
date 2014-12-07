@@ -10,10 +10,15 @@ block content
 	.row
 		.col-md-8.code-main
 			p Contenido del chortable
+			ul(id="sortable-main", class="connectedSortable")
 		.col-md-4.code-sidebar
 			p Contenido sidebar con mas opciones
+			ul(id="sortable-extra", class="connectedSortable")
+				for option in level.opciones
+					li(id=option.idelement, class="ui-state-default")
+						p #{option.answer}
 	.row
 		.col-md-8.console-log
 			p devopen:$ Consola con el texto de error
 		.col-md-4.code-run
-			input(type="button", placeholder="Run code >" value="Run code >")
+			input(type="button", id="validate", value="Run code >")

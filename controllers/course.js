@@ -33,7 +33,7 @@ exports.viewCourse = function(req, res) {
 exports.playLevel = function(req, res) {
 	Language.findOne({'url': req.params.course}, function(error, data){
 		language = data;
-		Exercise.find({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, data){
+		Exercise.findOne({ '_id': { $in : data['exercise']}, 'level': req.params.level}, function(error, data){
 			exercise = data;
 			res.render('course/level', {
 				title: "Course",
