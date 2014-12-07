@@ -133,7 +133,7 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
 /**
- * Game routes.
+ * Course routes.
  */
 
 app.get('/course', courseController.index);

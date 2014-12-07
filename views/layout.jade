@@ -18,9 +18,10 @@ html
         include partials/flash
         block content
 
-    .cources
-      .container
-        block cources
+    if title == "Home"
+        .cources
+          .container
+            block cources
     
     include partials/footer
 
