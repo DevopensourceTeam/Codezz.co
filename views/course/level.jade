@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
-	h1 #{title} #{course.name} level #{level_id} 
+	h1 #{title}: #{course.name} (level #{level_id}) - #{level.name}
 	a(href='/course/'+course.url)
 		span Back to levels
 	.row
 		.col-md-12.level-intro
-			p Div con contenido de ejemplos para notas de este nivel
+			p #{level.description}
 	.row
 		.col-md-8.code-main
 			p Contenido del chortable
