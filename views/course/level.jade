@@ -1,7 +1,19 @@
 extends ../layout
 
 block content
-	h1 #{title} #{course} level #{level} 
-	p Descripcion de este nivel
+	h1 #{title} #{course.name} level #{level_id} 
 	a(href='/course/'+course)
 		span Back to levels
+	.row
+		.col-md-12.level-intro
+			p Div con contenido de ejemplos para notas de este nivel
+	.row
+		.col-md-8.code-main
+			p Contenido del chortable
+		.col-md-4.code-sidebar
+			p Contenido sidebar con mas opciones
+	.row
+		.col-md-8.console-log
+			p devopen:$ Consola con el texto de error
+		.col-md-4.code-run
+			input(type="button", placeholder="Run code >" value="Run code >")

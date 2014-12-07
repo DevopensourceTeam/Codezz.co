@@ -37,7 +37,9 @@ exports.playLevel = function(req, res) {
 			exercise = data;
 			res.render('course/level', {
 				title: "Course",
+				course_id: req.params.course,
 				course: language,
+				level_id: req.params.level,
 				level: 	data
 			});
 		});
