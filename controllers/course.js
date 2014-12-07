@@ -87,13 +87,12 @@ exports.playLevel = function(req, res) {
 	});
 };
 
-exports.validateLevel = function(req, res, next) {
-
-	console.log(req.body);
-	
+exports.validateLevel = function(req, res, next) {	
 	Language.findOne({'url': req.body.course}, function(error, language){
 
-		console.log(language);
+		if(!language){
+			return res.redirect("/course");
+		}
 
 		Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.body.level}, function(error, exercise){
 				
@@ -108,26 +107,14 @@ exports.validateLevel = function(req, res, next) {
 
 					    user.save(function(err) {
 					      if (err) return next(err);
-      					  console.log("Correct!!");
-
-      					  var correct = "/course/"+language.url+'/level/'+(exercise.level+=1);
-      					  res.end(correct);
-
+      					  res.end("1");
 					    });
 					});
 				}else{
-					console.log("wrong!!");
+					res.end("0");
 				}
 		});
 	});
-
-};
-
-exports.testDebug = function(course, level, data) {
-	console.log("Prueba desde controller course");
-	console.log(level);
-	console.log(level);
-	console.log(data);
 };
 
 

@@ -25,6 +25,7 @@ $(document).ready(function() {
 		var course = courseData.val().trim();
 		var level = levelData.val().trim();
 		var idsInOrder = $("#sortable-main").sortable("toArray");
+		var consoletag="Codezz:$"
 
 		idsInOrder.forEach(function(id) {
 			data+=id;
@@ -35,11 +36,20 @@ $(document).ready(function() {
 			//socket.emit('validate exercise', uid, course, level, data);
 
         	$.post("/course/levelvalidate",{course: course, level: level, data: data}, function(result) {
-            	if(result)
-				{
+            	if(result=="1"){
+					$('.console-log').append('<p>'+consoletag+' Correct!<p>')
 					alert("Congratulation go to the next level! :)");
+					nextLevel();
+				}else{
+					$('.console-log').append('<p>'+consoletag+' Wrong! Try Again!<p>')
+
 				}
           	});
+
+      	  	function nextLevel(){
+      	  		console.log(window.location.protocol+"//"+window.location.host+"/course/"+course+'/level/'+( Number(level)+1 ));
+  				window.location.href ="/course/"+course+'/level/'+( Number(level)+1 );
+  			}
 		}
 	}
 
@@ -57,12 +67,6 @@ $(document).ready(function() {
 		console.log("Debug run click button");
 		validateExerciseResult();
   	});
-
-  	function nextLevel()
-  	{
-
-  	}
-
 
 	// Debug
 	socket.on('debug', function (data) {
