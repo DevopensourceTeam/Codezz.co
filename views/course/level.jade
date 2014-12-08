@@ -1,26 +1,30 @@
 extends ../layout
 
 block content
-	h1 #{title}: #{course.name} (level #{level_id}) - #{level.name}
-	a(href='/course/'+course.url)
-		span Back to levels
-	.row
-		.col-md-12.level-intro
-			p #{level.description}
-	.row
-		.col-md-8.code-main
-			p Contenido del chortable
-			ul(id="sortable-main", class="connectedSortable")
-		.col-md-4.code-sidebar
-			p Contenido sidebar con mas opciones
-			ul(id="sortable-extra", class="connectedSortable")
-				for option in level.opciones
-					li(id=option.idelement, class="ui-state-default")
-						p #{option.answer}
-	.row
-		.col-md-8.console-log
-			p devopen:$ Consola con el texto de error
-		.col-md-4.code-run
-			input(type="hidden", id="courseid", value=course.url)
-			input(type="hidden", id="levelid", value=level_id)
-			input(type="button", id="validate", value="Run code >")
+	.page-level
+		h1 #{title}: #{course.name} (level #{level_id}) - #{level.name}
+		a(href='/course/'+course.url)
+			span Back to levels
+		.row
+			.col-md-12.level-intro
+				p #{level.description}
+		.row
+			.col-md-8.code-main
+				p Contenido del chortable
+				ul(id="sortable-main", class="connectedSortable")
+			.col-md-4.code-sidebar
+				p Contenido sidebar con mas opciones
+				ul(id="sortable-extra", class="connectedSortable")
+					for option in level.opciones
+						li(id=option.idelement, class="ui-state-default")
+							p #{option.answer}
+		.row
+			.col-md-8.console-log
+				p Codezz:$ Try to run code!
+			.col-md-4.code-run
+				input(type="hidden", id="courseid", value=course.url)
+				input(type="hidden", id="levelid", value=level_id)
+				button.btn.btn-success.btn-primary.btn-lg(id="validate", type='submit')
+					span.fa.fa-bolt
+						|  Run code 
+						span.fa.fa-bolt
