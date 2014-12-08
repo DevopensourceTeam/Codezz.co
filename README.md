@@ -1,6 +1,7 @@
 # Codezz
 
 http://codezz.co/
+
 http://marcbernabeu.koding.io/
 
 ## Description
@@ -14,11 +15,11 @@ Browse through the different levels of learning, solving puzzles correctly and c
 
 ## Screenshots
 
-Here provide couple screenshots of your project. You can use a tool like https://monosnap.com/welcome or https://droplr.com to take a screenshot. Animated gifs are also welcome.
-
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-terminal.png "Koding")
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-ide.png "Koding")
-
+![home](https://cloud.githubusercontent.com/assets/6871312/5335645/b8e1020a-7eae-11e4-876f-aa0cf448dbf4.png)
+![courses](https://cloud.githubusercontent.com/assets/6871312/5335655/dda2ed10-7eae-11e4-95e0-b379cfcd42d5.png)
+![levels](https://cloud.githubusercontent.com/assets/6871312/5335656/dead76e4-7eae-11e4-8e74-6d5b9dcbdd63.png)
+![puzzle](https://cloud.githubusercontent.com/assets/6871312/5335660/fc71d76a-7eae-11e4-8a34-7fbf977d135b.png)
+![stars](https://cloud.githubusercontent.com/assets/6871312/5335662/fdc45a52-7eae-11e4-9c8e-d713b9a4e136.png)
 ## APIs used
 
 GitHub for sign in
