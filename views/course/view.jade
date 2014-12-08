@@ -17,4 +17,7 @@ block content
 				.info
 					h4 #{exercise.name}
 					p #{exercise.description}
-					a.btn.btn-success.btn-lg(href="/course/"+courses.url+"/level/"+exercise.level, role='button') Start level
+					if ((level+1) >= exercise.level)
+						a.btn.btn-success.btn-lg(href="/course/"+courses.url+"/level/"+exercise.level, role='button') Start level
+					else
+						a.btn.btn-default.btn-lg(href="#", disabled="disabled") No enable

@@ -1,8 +1,12 @@
 $(document).ready(function() {
+
+	// Equal height
+	$('.box, .code-main, .code-sidebar').matchHeight();
+
   	var start = new Date();
 
-  // General jquery
-   $('.carousel').carousel({
+  	// General jquery
+    $('.carousel').carousel({
         interval: 5000 //changes the speed
     });
 

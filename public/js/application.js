@@ -16,5 +16,6 @@
 //= require lib/jquery-2.1.1.min
 //= require lib/jquery-ui.min
 //= require lib/bootstrap.min
+//= require lib/jquery.matchHeight
 //= require lib/sweet-alert.min
 //= require main
