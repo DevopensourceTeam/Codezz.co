@@ -61,10 +61,11 @@ exports.playLevel = function(req, res) {
 				return res.redirect("/course/"+req.params.course);
 			}
 
+			exercise['opciones']=exercise['opciones'].sort(function() {return .5 - Math.random();});
+
 			if(req.params.level>1){
 				Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.params.level-1}, function(error, lastexercise){
 					User.findOne({'_id': req.user.id, 'progress':lastexercise['_id']}, function(err, user) {
-						console.log(user);
 						if (user) {
 							res.render('course/level', {
 								title: "Course",
