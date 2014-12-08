@@ -44,19 +44,19 @@ $(document).ready(function() {
 					        break;
    						case "0":
 							$('.console-log').append('<p>'+consoletag+' Correct!</p>');
-							nextLevel(0);
+							nextLevel(0,"Correct!");
 					        break;
    						case "1":
 							$('.console-log').append('<p>'+consoletag+' Good!</p>');
-							nextLevel(1);
+							nextLevel(1,"Good!");
 					        break; 
    						case "2":
 							$('.console-log').append('<p>'+consoletag+' Very Good!</p>')
-							nextLevel(2);
+							nextLevel(2,"Very Good!");
 					        break;
     					case "3":
 							$('.console-log').append('<p>'+consoletag+' Perfect!</p>')
-							nextLevel(3);
+							nextLevel(3,"Perfect!");
 					        break;   
 					}
 
@@ -65,11 +65,17 @@ $(document).ready(function() {
 
           	});
 
-      	  	function nextLevel(stars){
+      	  	function nextLevel(stars,text){
       	  		console.log(stars);
-				alert("Congratulation go to the next level! :)");
-      	  		console.log(window.location.protocol+"//"+window.location.host+"/course/"+course+'/level/'+( Number(level)+1 ));
-  				window.location.href ="/course/"+course+'/level/'+( Number(level)+1 );
+      	  		sweetAlert({
+				  title: text,
+				  type: "success",
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText: "Continue",
+				  closeOnConfirm: true
+				}, function(){
+					window.location.href ="/course/"+course+'/level/'+( Number(level)+1 );
+				});
   			}
 		}
 	}
