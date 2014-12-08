@@ -60,9 +60,6 @@ $(document).ready(function() {
 					        break;   
 					}
 
-					var objDiv = $(".console-log");
-					objDiv.scrollTop = objDiv.scrollHeight;
-
           	});
 
       	  	function nextLevel(stars,text){
