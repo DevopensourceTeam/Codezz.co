@@ -99,7 +99,6 @@ exports.validateLevel = function(req, res, next) {
 		}
 
 		Exercise.findOne({ '_id': { $in : language['exercise']}, 'level': req.body.level}, function(error, exercise){
-				
 				if(md5(exercise['solution'])==md5(req.body.data)){
 					User.findById(req.user.id, function(err, user) {
 
@@ -108,14 +107,22 @@ exports.validateLevel = function(req, res, next) {
 					    if(!(user.progress.indexOf(exercise)>1)){
 					    	user.progress.push(exercise);
 					    }
+					    var stars=0;
+					    if(req.body.seconds<=exercise['time']['gold']){
+					    	stars=3;
+					    }else if(req.body.seconds<=exercise['time']['silver']){
+					    	stars=2;
+					    }else if(req.body.seconds<=exercise['time']['bronze']){
+					    	stars=1;
+					    };
 
 					    user.save(function(err) {
 					      if (err) return next(err);
-      					  res.end("1");
+      					  res.end(""+stars);
 					    });
 					});
 				}else{
-					res.end("0");
+					res.end("-1");
 				}
 		});
 	});

@@ -56,15 +56,20 @@ var Language = require('./models/Language');
     },{
       answer: "CONDITION",
       idelement: "l2" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
   var exercise2 = new Exercise({
-    name: "IF - ELSE",
+    name: "IF / ELSE",
     level: 2,
     description: "Now, we have the ELSE conditional. It works together with the IF conditional: The condition is evaluated, if true executes a code, if false, execute other code. Try it with this exercise.",
-    solution: "l8l1l3l7l5",
+    solution: "l2l8l1l3l7l5",
     opciones: [{
       answer: "if (Has less legs than 4) {",
       idelement: "l2" 
@@ -89,17 +94,22 @@ var Language = require('./models/Language');
     },{
       answer: ")",
       idelement: "l6" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
   var exercise3 = new Exercise({
     name: "WHILE",
     level: 3,
-    description: "There are many loops that are used for programming, very useful to solve big problems. This course will teach you two of them. The first one is the While loop: allows repeat the internal code while condition is met. Ordered correctly this loop.",
+    description: "There are many loops that are used for programming, very useful to solve big problems. This course will teach you two of them. The first one is the While loop: allows repeat the internal code while condition is met. Exercise: Increase a number while this number is less than 10. Properly order this loop.",
     solution: "l5l2l1",
     opciones: [{
-      answer: "while (Number less than 10)",
+      answer: "while (Number less than 10) {",
       idelement: "l5" 
     },{
       answer: "Increment number",
@@ -113,14 +123,19 @@ var Language = require('./models/Language');
     },{
       answer: "Decrement number",
       idelement: "l3" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise3.save();
 
   var exercise4 = new Exercise({
-    name: "SWITCH - CASE",
+    name: "SWITCH / CASE",
     level: 4,
-    description: "The Switch - Case structure allows us to assess the value of an expression to make a decision in the flow of execution. It is very similar to the control structure If - Else but Switch - Case we can evaluate more than two cases. Organize the options below to create your own loop Switch - Case.",
+    description: "The Switch/Case structure allows us to assess the value of an expression to make a decision in the flow of execution. It is very similar to the control structure If/Else but Switch - Case we can evaluate more than two cases. Organize the options below to create your own loop Switch/Case.",
     solution: "l5l2l4l9l1l8l7l3l6",
     opciones: [{
       answer: "switch (OPERATOR) {",
@@ -149,7 +164,12 @@ var Language = require('./models/Language');
     },{
       answer: "Divide the numbers",
       idelement: "l6" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise4.save();
 
@@ -193,7 +213,12 @@ var Language = require('./models/Language');
     },{
       answer: "</html>",
       idelement: "l3" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
@@ -232,7 +257,12 @@ var Language = require('./models/Language');
     },{
       answer: "<body-h1> Hello World </body-h1>",
       idelement: "l3" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
@@ -286,7 +316,12 @@ var Language = require('./models/Language');
     },{
       answer: "</foot>",
       idelement: "l11" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise3.save();
 
@@ -325,7 +360,12 @@ var Language = require('./models/Language');
     },{
       answer: "<tr> World </tr>",
       idelement: "l8" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise4.save();
 
@@ -358,7 +398,12 @@ var Language = require('./models/Language');
     },{
       answer: ")",
       idelement: "l3" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
@@ -385,7 +430,12 @@ var Language = require('./models/Language');
     },{
       answer: "padding-left= 20px",
       idelement: "l6" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
@@ -409,14 +459,19 @@ var Language = require('./models/Language');
     },{
       answer: "}",
       idelement: "l3" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise3.save();
 
   var exercise4 = new Exercise({
     name: "Custom CSS",
     level: 4,
-    description: "Ok. Now you know how to add a style to HTML tags, but what happens if you want to give a different style item to the rest? Let's give this tag <h1> a different style to the rest of <h1>. Look at this line of code: <h1 class=\"custom\"> Hello World </h1> Creat you own custom CSS following this order: 1 - Change the text color. 2 - Change the font size. 3 - Align the text in the center",
+    description: "Ok. Now you know how to add a style to HTML tags, but what happens if you want to give a different style item to the rest?. Let's give to the tag <h1> a different style to the rest of <h1>. Look at this line of code: <h1 class=\"custom\"> Hello World </h1>. Creat you own custom CSS following this order: 1 - Change the text color. 2 - Change the font size. 3 - Align the text in the center.",
     solution: "l3l2l1l7l5",
     opciones: [{
       answer: ".custom {",
@@ -439,14 +494,19 @@ var Language = require('./models/Language');
     },{
       answer: "weith-font: 20px",
       idelement: "l4" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise4.save();
 
   var language = new Language({
       name: 'CSS',
       description: 'Do you want to give a better design of your website? Learn it with this CSS course.',
-      url: 'css',
+      url: 'css3',
       exercise: [exercise1,exercise2,exercise3,exercise4] 
   });
   language.save();
@@ -456,10 +516,13 @@ var Language = require('./models/Language');
     name: "Basic Structure",
     level: 1,
     description: "XML lets you design your own markup language helping to keep our information hierarchically structured. Solves the basic structure of an XML file.",
-    solution: "l8l2l5l4l3l7l1",
+    solution: "l8l10l2l5l4l3l7l1l9",
     opciones: [{
       answer: "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
       idelement: "l8" 
+    },{
+      answer: "<tags>",
+      idelement: "l10" 
     },{
       answer: "<tag1>",
       idelement: "l2" 
@@ -479,9 +542,17 @@ var Language = require('./models/Language');
       answer: "</tag2>",
       idelement: "l1" 
     },{
+      answer: "</tags>",
+      idelement: "l9" 
+    },{
       answer: "</xml>",
       idelement: "l6" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
@@ -489,7 +560,7 @@ var Language = require('./models/Language');
     name: "Content",
     level: 2,
     description: "XML is \"case sensitive\", treats uppercase and lowercase as different characters. If an XML element is defined as \"Element\", we can not use \"element\" to refer to it. Knowing this, organizes the code.",
-    solution: "l5l3l4l1l2l8l9",
+    solution: "l5l3l10l4l1l11l12l2l8l13l9l6l7",
     opciones: [{
       answer: "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
       idelement: "l5" 
@@ -497,17 +568,29 @@ var Language = require('./models/Language');
       answer: "<calendar>",
       idelement: "l3" 
     },{
+      answer: "<january>",
+      idelement: "l10" 
+    },{
       answer: "<Month> January </Month>",
       idelement: "l4" 
     },{
       answer: "<days> 31 </days>",
       idelement: "l1" 
     },{
+      answer: "</january>",
+      idelement: "l11" 
+    },{
+      answer: "<april>",
+      idelement: "l12" 
+    },{
       answer: "<month> April </month>",
       idelement: "l2" 
     },{
       answer: "<days> 30 </days>",
       idelement: "l8" 
+    },{
+      answer: "</april>",
+      idelement: "l13" 
     },{
       answer: "</calendar>",
       idelement: "l9" 
@@ -517,7 +600,12 @@ var Language = require('./models/Language');
     },{
       answer: "<month> 30 </Month>",
       idelement: "l7" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
@@ -551,7 +639,12 @@ var Language = require('./models/Language');
     },{
       answer: "</?>",
       idelement: "l5" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
@@ -559,7 +652,7 @@ var Language = require('./models/Language');
     name: "PHP inside HTML",
     level: 2,
     description: "PHP can also be introduced into an HTML file. In this exercise you can learn how is the structure organization.",
-    solution: "l3l4l5l7l1l8l2",
+    solution: "l3l6l4l5l7l1l8l2",
     opciones: [{
       answer: "<html>",
       idelement: "l3" 
@@ -584,7 +677,12 @@ var Language = require('./models/Language');
     },{
       answer: "</html>",
       idelement: "l2" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
@@ -608,7 +706,12 @@ var Language = require('./models/Language');
     },{
       answer: " \"key\" = \"value\" ",
       idelement: "l2" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise1.save();
 
@@ -629,7 +732,12 @@ var Language = require('./models/Language');
     },{
       answer: " ( \"Name\" : \"Apple\" ; \"Amount\" : \"10\" ) ",
       idelement: "l1" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise2.save();
 
@@ -656,7 +764,12 @@ var Language = require('./models/Language');
     },{
       answer: " ) ",
       idelement: "l5" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise3.save();
 
@@ -678,10 +791,10 @@ var Language = require('./models/Language');
       answer: " { \"Name\" : \"Pear\" , \"Amount\" : \"5\" } ",
       idelement: "l7" 
     },{
-      answer: "]",
+      answer: "] //end array Fruit",
       idelement: "l12" 
     },{
-      answer: "}",
+      answer: "} //end object Fruit",
       idelement: "l9" 
     },{
       answer: " { \"Verdure\" : [ ",
@@ -693,15 +806,20 @@ var Language = require('./models/Language');
       answer: " { \"Name\" : \"Salad\" , \"Amount\" : \"2\" } ",
       idelement: "l2" 
     },{
-      answer: "]",
+      answer: "] //end array Verdure",
       idelement: "l10" 
     },{
-      answer: "}",
+      answer: "} //end object Verdure",
       idelement: "l6" 
     },{
-      answer: "]",
+      answer: "] //end array Food",
       idelement: "l11" 
-    }]
+    }],
+    time:{
+      gold: 30,
+      silver: 60, 
+      bronze: 90, 
+    }
   });
   exercise4.save();
 

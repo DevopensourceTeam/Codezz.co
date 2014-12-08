@@ -8,7 +8,12 @@ var exerciseSchema = new mongoose.Schema({
     opciones: [{
       answer: String,
       idelement: String 
-    }]
+    }],
+	time:{
+      gold: Number,
+      silver: Number, 
+	  bronze: Number, 
+    }
 });
 
 module.exports = mongoose.model('Exercise', exerciseSchema);

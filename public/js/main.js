@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  	var start = new Date();
 
   // General jquery
    $('.carousel').carousel({
@@ -26,7 +27,8 @@ $(document).ready(function() {
 		var level = levelData.val().trim();
 		var idsInOrder = $("#sortable-main").sortable("toArray");
 		var consoletag="Codezz:$"
-
+		var end = new Date();
+        var seconds = Math.floor((end - start) / 1000);
 		idsInOrder.forEach(function(id) {
 			data+=id;
 		});
@@ -35,31 +37,42 @@ $(document).ready(function() {
 			
 			//socket.emit('validate exercise', uid, course, level, data);
 
-        	$.post("/course/levelvalidate",{course: course, level: level, data: data}, function(result) {
-            	if(result=="1"){
-					$('.console-log').append('<p>'+consoletag+' Correct!<p>')
-					alert("Congratulation go to the next level! :)");
-					nextLevel();
-				}else{
-					$('.console-log').append('<p>'+consoletag+' Wrong! Try Again!<p>')
+        	$.post("/course/levelvalidate",{course: course, level: level,seconds: seconds, data: data}, function(result) {
+					switch(result){
+						case "-1":
+							$('.console-log').append('<p>'+consoletag+' Wrong! Try Again!</p>');
+					        break;
+   						case "0":
+							$('.console-log').append('<p>'+consoletag+' Correct!</p>');
+							nextLevel(0);
+					        break;
+   						case "1":
+							$('.console-log').append('<p>'+consoletag+' Good!</p>');
+							nextLevel(1);
+					        break; 
+   						case "2":
+							$('.console-log').append('<p>'+consoletag+' Very Good!</p>')
+							nextLevel(2);
+					        break;
+    					case "3":
+							$('.console-log').append('<p>'+consoletag+' Perfect!</p>')
+							nextLevel(3);
+					        break;   
+					}
 
-				}
+					var objDiv = $(".console-log");
+					objDiv.scrollTop = objDiv.scrollHeight;
+
           	});
 
-      	  	function nextLevel(){
+      	  	function nextLevel(stars){
+      	  		console.log(stars);
+				alert("Congratulation go to the next level! :)");
       	  		console.log(window.location.protocol+"//"+window.location.host+"/course/"+course+'/level/'+( Number(level)+1 ));
   				window.location.href ="/course/"+course+'/level/'+( Number(level)+1 );
   			}
 		}
 	}
-
-	// Onchange sortable
-	/*
-	sortableSelector.on("sortchange", function(event, ui){
-		console.log("Debug sortchange");
-		validateExerciseResult();
-	});
-	*/
 
 	// Onclick Run code
 	var $inputRun = $('#validate');
