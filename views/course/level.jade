@@ -6,14 +6,15 @@ block content
 		a(href='/course/'+course.url)
 			span Back to levels
 		.row
-			.col-md-12.level-intro
+			.col-md-12.level-intro.bs-callout.bs-callout-info
 				p #{level.description}
 		.row
 			.col-md-8.code-main
-				p Contenido del chortable
+				p.text-info Drag and drop here!
 				ul(id="sortable-main", class="connectedSortable")
 			.col-md-4.code-sidebar
-				p Contenido sidebar con mas opciones
+				p.bg-info Chose your options
+				p.small Remember that some options are incorrect***
 				ul(id="sortable-extra", class="connectedSortable")
 					for option in level.opciones
 						li(id=option.idelement, class="ui-state-default")
