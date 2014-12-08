@@ -158,8 +158,6 @@ app.post('/course/levelvalidate', passportConf.isAuthenticated, courseController
  */
 
 app.get('/api', apiController.getApi);
-app.get('/api/stripe', apiController.getStripe);
-app.post('/api/stripe', apiController.postStripe);
 app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getGithub);
 
 
