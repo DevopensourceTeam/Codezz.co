@@ -4,7 +4,7 @@ http://codezz.co/
 
 ## Description
 
-[![Koding Hackathon](/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
+[![Koding Hackathon](https://github.com/koding/hackathon.submit/raw/master/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
 
 We are glad to present you Codezz, a platform for beginners programmers that allow learn and gain the basic knowledge required to start programming in HTML5, CSS3, PHP, XML, JSON and many more.
 What is Codezz?
@@ -21,5 +21,7 @@ Here provide couple screenshots of your project. You can use a tool like https:/
 ## APIs used
 
 GitHub for sign in
+
 Google for sign in
+
 SendGrid for send transactional emails
