@@ -1,24 +1,22 @@
 extends ../layout
 
 block content
-  .page-header
-    h3 Sign up
-  form.form-horizontal(id='signup-form', method='POST')
+  .row.login-box
+  form(id='signup-form', method='POST', class="form-signin mg-btm")
     input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
-    .form-group
-      label.col-sm-3.control-label(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password')
-    .form-group
-      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-      .col-sm-7
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        button.btn.btn-success(type='submit')
-          span.ion-person-add
-          | Signup
+    h3.heading-desc
+      | Sign up
+    .main
+      input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
+      input.form-control(type='password', name='password', id='password', placeholder='Password')     
+      input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')      
+      span.clearfix
+    .login-footer
+      .row
+        .col-xs-6.col-md-6
+          .left-section
+            a.btn.btn-link(href='/login') Do you have account?
+        .col-xs-6.col-md-6.pull-right
+          button.btn.btn-success.pull-right(type='submit')
+            span.ion-person-add
+            | Signup
