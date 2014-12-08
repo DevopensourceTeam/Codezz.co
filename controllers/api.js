@@ -5,7 +5,6 @@ var validator = require('validator');
 var async = require('async');
 var request = require('request');
 var Github = require('github-api');
-var stripe =  require('stripe')(secrets.stripe.secretKey);
 var Y = require('yui/yql');
 var _ = require('lodash');
 
@@ -38,39 +37,4 @@ exports.getGithub = function(req, res, next) {
     });
   });
 
-};
-
-/**
- * GET /api/stripe
- * Stripe API example.
- */
-
-exports.getStripe = function(req, res) {
-  res.render('api/stripe', {
-    title: 'Stripe API',
-    publishableKey: secrets.stripe.publishableKey
-  });
-};
-
-/**
- * POST /api/stripe
- * Make a payment.
- */
-
-exports.postStripe = function(req, res, next) {
-  var stripeToken = req.body.stripeToken;
-  var stripeEmail = req.body.stripeEmail;
-  stripe.charges.create({
-    amount: 395,
-    currency: 'usd',
-    card: stripeToken,
-    description: stripeEmail
-  }, function(err, charge) {
-    if (err && err.type === 'StripeCardError') {
-      req.flash('errors', { msg: 'Your card has been declined.' });
-      res.redirect('/api/stripe');
-    }
-    req.flash('success', { msg: 'Your card has been charged successfully.' });
-    res.redirect('/api/stripe');
-  });
 };
