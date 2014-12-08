@@ -67,7 +67,7 @@ $(document).ready(function() {
           	});
 
       	  	function nextLevel(stars,text){
-      	  		console.log(stars);
+      	  		//console.log(stars);
       	  		sweetAlert({
 				  title: text,
 				  type: "success",
@@ -78,6 +78,7 @@ $(document).ready(function() {
 					window.location.href ="/course/"+course+'/level/'+( Number(level)+1 );
 				});
   			}
+
 		}
 	}
 
