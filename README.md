@@ -1,6 +1,6 @@
 # Codezz
 
-http://codezz.co/
+http://codezz.co/ (Digital Ocean)
 
 http://marcbernabeu.koding.io/
 
